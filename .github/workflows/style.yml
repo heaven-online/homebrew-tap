@@ -1,0 +1,22 @@
+name: Formula style
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  formula-style:
+    runs-on: macos-latest
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_ANALYTICS: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check formula style
+        run: brew style Formula/sentriex.rb

@@ -4,22 +4,26 @@ class Sentriex < Formula
   version "0.1.0"
 
   on_macos do
-    if Hardware::CPU.arm?
+    on_arm do
       url "https://github.com/heaven-online/sentriex-agent-skills/releases/download/v0.1.0/sentriex_v0.1.0_darwin_arm64.tar.gz"
-      sha256 "3f565c75894f5cfc20822933913236cab48d98cc11f7bed6c5e3b2c4eaa5e5dc"
-    else
+      sha256 "b12dcce84afe72c52bb5c45daba3a943b76e1a4ddf0ab02a8dd14b782744f979"
+    end
+
+    on_intel do
       url "https://github.com/heaven-online/sentriex-agent-skills/releases/download/v0.1.0/sentriex_v0.1.0_darwin_amd64.tar.gz"
-      sha256 "6a1c69887c7fef28c37939babf4d470a1f4c231a491fce4239d7f06919e54c3a"
+      sha256 "c2c79e2c1382d1defd219e35483547ac4e153ea2e7c2ed4e04b34e6a9c7e1461"
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm?
+    on_arm do
       url "https://github.com/heaven-online/sentriex-agent-skills/releases/download/v0.1.0/sentriex_v0.1.0_linux_arm64.tar.gz"
-      sha256 "2a9aeb15af5a482282b681f190c20cb2cb5ebd192f1af25129996b3a6daf0251"
-    else
+      sha256 "f4d17961a5583b53cdc7f8b1bd63122bfa0fcc972fc028de7c3423e14170a2e0"
+    end
+
+    on_intel do
       url "https://github.com/heaven-online/sentriex-agent-skills/releases/download/v0.1.0/sentriex_v0.1.0_linux_amd64.tar.gz"
-      sha256 "4cc49eb647b55ab4f82428bd9390372f88460c953386790baa911d1eb3e793cd"
+      sha256 "b067f121b532626ec372565a445c2803e60cad383c8dc9b38d1eac13c0f436bb"
     end
   end
 
